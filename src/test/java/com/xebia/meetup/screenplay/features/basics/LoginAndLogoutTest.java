@@ -1,12 +1,13 @@
 package com.xebia.meetup.screenplay.features.basics;
 
 import com.xebia.meetup.screenplay.abilities.Authenticate;
-import com.xebia.meetup.screenplay.tasks.BrowseToTheLoginPage;
-import com.xebia.meetup.screenplay.tasks.LogIn;
+import com.xebia.meetup.screenplay.tasks.login.BrowseToTheLoginPage;
+import com.xebia.meetup.screenplay.tasks.login.LogIn;
 import com.xebia.meetup.screenplay.tasks.LogOut;
 import com.xebia.meetup.screenplay.tasks.OpenTheMeetUpWebsite;
-import com.xebia.meetup.screenplay.questions.TheUserAvatarIsVisible;
+import com.xebia.meetup.screenplay.questions.IsTheUserAvatarVisible;
 
+import com.xebia.meetup.screenplay.tasks.login.OpenTheLoginPage;
 import com.xebia.meetup.utils.Credentials;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
@@ -17,6 +18,7 @@ import net.thucydides.core.annotations.Steps;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -36,8 +38,10 @@ public class LoginAndLogoutTest {
     public WebDriver herBrowser;
 
     @Steps OpenTheMeetUpWebsite openTheMeetUpWebsite;
+    @Steps OpenTheLoginPage openTheLoginPage;
     @Steps BrowseToTheLoginPage browseToTheLoginPage;
-    @Steps TheUserAvatarIsVisible theUserAvatarIsVisible;
+    @Steps
+    IsTheUserAvatarVisible theUserAvatarIsVisible;
     @Steps LogOut logOut;
 
     @Before
@@ -54,6 +58,14 @@ public class LoginAndLogoutTest {
         when(anna).wasAbleTo(browseToTheLoginPage);
         and(anna).attemptsTo(LogIn.withCredentials());
 
+        then(anna).should(eventually(seeThat(theUserAvatarIsVisible)));
+    }
+
+    @Test
+    @Ignore
+    public void login_with_facebook() {
+        givenThat(anna).wasAbleTo(openTheLoginPage);
+        when(anna).attemptsTo(LogIn.withFacebook());
         then(anna).should(eventually(seeThat(theUserAvatarIsVisible)));
     }
 

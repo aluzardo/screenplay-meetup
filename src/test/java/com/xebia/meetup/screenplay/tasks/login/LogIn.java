@@ -1,4 +1,4 @@
-package com.xebia.meetup.screenplay.tasks;
+package com.xebia.meetup.screenplay.tasks.login;
 
 import com.xebia.meetup.screenplay.abilities.Authenticate;
 import com.xebia.meetup.screenplay.ui.LoginPage;
@@ -17,6 +17,10 @@ public class LogIn implements Task {
 
     public static LogIn withCredentials() {
         return instrumented(LogIn.class);
+    }
+
+    public static LogIn withFacebook() {
+        throw new RuntimeException("Not yet implemented.");
     }
 
     @Override

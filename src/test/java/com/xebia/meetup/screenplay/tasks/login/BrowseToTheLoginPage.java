@@ -1,4 +1,4 @@
-package com.xebia.meetup.screenplay.tasks;
+package com.xebia.meetup.screenplay.tasks.login;
 
 import com.xebia.meetup.screenplay.ui.MeetUpLandingPage;
 import net.serenitybdd.screenplay.Actor;

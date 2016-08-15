@@ -1,6 +1,7 @@
 package com.xebia.meetup.screenplay.tasks;
 
-import com.xebia.meetup.screenplay.ui.UserMenu;
+import com.xebia.meetup.screenplay.ui.HeaderNavigation.AccountDropdown;
+import com.xebia.meetup.screenplay.ui.HeaderNavigation;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -15,8 +16,8 @@ public class LogOut implements Task {
     @Step("logs out")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(UserMenu.SHOW_DROPDOWN),
-                Click.on(UserMenu.LOGOUT_LINK)
+                Click.on(HeaderNavigation.ACCOUNT_DROPDOWN),
+                Click.on(AccountDropdown.LOGOUT_LINK)
         );
     }
 }
