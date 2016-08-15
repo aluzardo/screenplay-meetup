@@ -37,6 +37,7 @@ public class LoginAndLogoutTest {
 
     @Steps OpenTheMeetUpWebsite openTheMeetUpWebsite;
     @Steps BrowseToTheLoginPage browseToTheLoginPage;
+    @Steps TheUserAvatarIsVisible theUserAvatarIsVisible;
     @Steps LogOut logOut;
 
     @Before
@@ -53,7 +54,7 @@ public class LoginAndLogoutTest {
         when(anna).wasAbleTo(browseToTheLoginPage);
         and(anna).attemptsTo(LogIn.withCredentials());
 
-        then(anna).should(eventually(seeThat(new TheUserAvatarIsVisible())));
+        then(anna).should(eventually(seeThat(theUserAvatarIsVisible)));
     }
 
     @After
