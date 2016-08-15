@@ -3,9 +3,6 @@ package com.xebia.meetup.screenplay.ui;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-/**
- * Created by jochum on 15/08/16.
- */
 public class HeaderNavigation {
     public static Target MESSAGES = Target.the("messages menu item").located(By.cssSelector("#nav-messages a"));
 

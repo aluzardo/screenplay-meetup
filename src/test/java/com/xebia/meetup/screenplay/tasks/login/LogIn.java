@@ -10,9 +10,6 @@ import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-/**
- * Created by jochum on 15/08/16.
- */
 public class LogIn implements Task {
 
     public static LogIn withCredentials() {

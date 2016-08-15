@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * Created by jochum on 15/08/16.
- */
 public class Credentials {
 
     private Properties props;

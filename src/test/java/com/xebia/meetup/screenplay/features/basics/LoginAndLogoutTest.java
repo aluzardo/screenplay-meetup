@@ -3,15 +3,17 @@ package com.xebia.meetup.screenplay.features.basics;
 import com.xebia.meetup.screenplay.abilities.Authenticate;
 import com.xebia.meetup.screenplay.tasks.login.BrowseToTheLoginPage;
 import com.xebia.meetup.screenplay.tasks.login.LogIn;
+import com.xebia.meetup.screenplay.tasks.login.OpenTheLoginPage;
 import com.xebia.meetup.screenplay.tasks.LogOut;
 import com.xebia.meetup.screenplay.tasks.OpenTheMeetUpWebsite;
 import com.xebia.meetup.screenplay.questions.TheUserAvatarIsVisible;
-
-import com.xebia.meetup.screenplay.tasks.login.OpenTheLoginPage;
 import com.xebia.meetup.utils.Credentials;
+
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
+import org.openqa.selenium.WebDriver;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -21,14 +23,10 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.EventualConsequence.eventually;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
-/**
- * Created by jochum on 15/08/16.
- */
 @RunWith(SerenityRunner.class)
 public class LoginAndLogoutTest {
 

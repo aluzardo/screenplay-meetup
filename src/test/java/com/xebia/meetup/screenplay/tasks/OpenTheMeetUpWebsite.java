@@ -5,9 +5,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 
-/**
- * Created by jochum on 15/08/16.
- */
 public class OpenTheMeetUpWebsite implements Task {
 
     MeetUpLandingPage meetUpLandingPage;
