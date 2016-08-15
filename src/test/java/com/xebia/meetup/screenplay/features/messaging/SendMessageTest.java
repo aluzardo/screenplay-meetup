@@ -8,24 +8,25 @@ import com.xebia.meetup.screenplay.tasks.login.OpenTheLoginPageAndLogin;
 import com.xebia.meetup.screenplay.tasks.messaging.DraftANewMessage;
 import com.xebia.meetup.screenplay.tasks.messaging.SendTheMessage;
 import com.xebia.meetup.utils.Credentials;
+
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
+import org.openqa.selenium.WebDriver;
+
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.EventualConsequence.eventually;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
-import static org.fluentlenium.core.filter.FilterConstructor.withText;
+import static org.hamcrest.Matchers.containsString;
 
-/**
- * Created by jochum on 15/08/16.
- */
 @RunWith(SerenityRunner.class)
 public class SendMessageTest {
     Actor anna = Actor.named("Anna");
@@ -48,14 +49,15 @@ public class SendMessageTest {
 
     @Test
     public void start_a_conversation_by_sending_a_message() {
-        String otherUser = "User";
+        String otherUser = "Screenplay Meetup";
 
         givenThat(anna).wasAbleTo(browseToMessagesPage);
 
-        when(anna).attemptsTo(DraftANewMessage.forUser(otherUser).withText("This Is A Test Message"));
+        when(anna).attemptsTo(DraftANewMessage.forUserWithText(otherUser, "This Is A Test Message"));
         and(anna).wasAbleTo(sendTheMessage);
 
-        then(anna).should(eventually(seeThat(Conversations.includeConversationWith(otherUser))));
+        then(anna).attemptsTo(browseToMessagesPage);
+        and(anna).should(eventually(seeThat(Conversations.mostRecentConversationPartner(), containsString(otherUser))));
     }
 
     @After
