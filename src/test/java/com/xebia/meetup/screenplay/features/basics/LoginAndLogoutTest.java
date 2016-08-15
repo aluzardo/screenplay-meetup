@@ -5,7 +5,7 @@ import com.xebia.meetup.screenplay.tasks.login.BrowseToTheLoginPage;
 import com.xebia.meetup.screenplay.tasks.login.LogIn;
 import com.xebia.meetup.screenplay.tasks.LogOut;
 import com.xebia.meetup.screenplay.tasks.OpenTheMeetUpWebsite;
-import com.xebia.meetup.screenplay.questions.IsTheUserAvatarVisible;
+import com.xebia.meetup.screenplay.questions.TheUserAvatarIsVisible;
 
 import com.xebia.meetup.screenplay.tasks.login.OpenTheLoginPage;
 import com.xebia.meetup.utils.Credentials;
@@ -40,8 +40,7 @@ public class LoginAndLogoutTest {
     @Steps OpenTheMeetUpWebsite openTheMeetUpWebsite;
     @Steps OpenTheLoginPage openTheLoginPage;
     @Steps BrowseToTheLoginPage browseToTheLoginPage;
-    @Steps
-    IsTheUserAvatarVisible theUserAvatarIsVisible;
+    @Steps TheUserAvatarIsVisible theUserAvatarIsVisible;
     @Steps LogOut logOut;
 
     @Before
