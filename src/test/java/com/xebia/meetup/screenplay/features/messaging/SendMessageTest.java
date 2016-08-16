@@ -2,7 +2,7 @@ package com.xebia.meetup.screenplay.features.messaging;
 
 import com.xebia.meetup.screenplay.abilities.Authenticate;
 import com.xebia.meetup.screenplay.questions.Conversations;
-import com.xebia.meetup.screenplay.tasks.BrowseToMessagesPage;
+import com.xebia.meetup.screenplay.tasks.BrowseToTheMessagesPage;
 import com.xebia.meetup.screenplay.tasks.LogOut;
 import com.xebia.meetup.screenplay.tasks.login.OpenTheLoginPageAndLogin;
 import com.xebia.meetup.screenplay.tasks.messaging.DraftANewMessage;
@@ -36,7 +36,7 @@ public class SendMessageTest {
     public WebDriver herBrowser;
 
     @Steps OpenTheLoginPageAndLogin openTheLoginPageAndLogin;
-    @Steps BrowseToMessagesPage browseToMessagesPage;
+    @Steps BrowseToTheMessagesPage browseToTheMessagesPage;
     @Steps SendTheMessage sendTheMessage;
     @Steps LogOut logOut;
 
@@ -50,12 +50,12 @@ public class SendMessageTest {
 
     @Test
     public void start_a_conversation_by_sending_a_message() {
-        givenThat(anna).wasAbleTo(browseToMessagesPage);
+        givenThat(anna).wasAbleTo(browseToTheMessagesPage);
 
         when(anna).attemptsTo(DraftANewMessage.forUser(otherUser).withText("This Is A Test Message"));
         and(anna).wasAbleTo(sendTheMessage);
 
-        then(anna).attemptsTo(browseToMessagesPage);
+        then(anna).attemptsTo(browseToTheMessagesPage);
         and(anna).should(eventually(seeThat(Conversations.mostRecentConversationPartner(), containsString(otherUser))));
     }
 

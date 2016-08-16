@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.thucydides.core.annotations.Step;
 
-public class BrowseToMessagesPage implements Task {
+public class BrowseToTheMessagesPage implements Task {
 
     @Override
     @Step("browses to the messages page")
