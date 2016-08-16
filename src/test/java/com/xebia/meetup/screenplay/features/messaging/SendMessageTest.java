@@ -30,6 +30,7 @@ import static org.hamcrest.Matchers.containsString;
 @RunWith(SerenityRunner.class)
 public class SendMessageTest {
     Actor anna = Actor.named("Anna");
+    String otherUser = "Screenplay Meetup";
 
     @Managed(uniqueSession = true)
     public WebDriver herBrowser;
@@ -49,11 +50,9 @@ public class SendMessageTest {
 
     @Test
     public void start_a_conversation_by_sending_a_message() {
-        String otherUser = "Screenplay Meetup";
-
         givenThat(anna).wasAbleTo(browseToMessagesPage);
 
-        when(anna).attemptsTo(DraftANewMessage.forUserWithText(otherUser, "This Is A Test Message"));
+        when(anna).attemptsTo(DraftANewMessage.forUser(otherUser).withText("This Is A Test Message"));
         and(anna).wasAbleTo(sendTheMessage);
 
         then(anna).attemptsTo(browseToMessagesPage);
