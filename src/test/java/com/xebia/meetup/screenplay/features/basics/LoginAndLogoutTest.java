@@ -13,6 +13,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
+import net.thucydides.core.annotations.WithTag;
 import org.openqa.selenium.WebDriver;
 
 import net.thucydides.core.annotations.Managed;
@@ -28,6 +29,7 @@ import static net.serenitybdd.screenplay.EventualConsequence.eventually;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 
 @RunWith(SerenityRunner.class)
+@WithTag("Screenplay")
 public class LoginAndLogoutTest {
 
     Actor anna = Actor.named("Anna");
@@ -51,9 +53,9 @@ public class LoginAndLogoutTest {
     @Test
     public void login_with_credentials() {
         givenThat(anna).wasAbleTo(openTheMeetUpWebsite);
+        and(anna).wasAbleTo(browseToTheLoginPage);
 
-        when(anna).wasAbleTo(browseToTheLoginPage);
-        and(anna).attemptsTo(LogIn.withCredentials());
+        when(anna).attemptsTo(LogIn.withCredentials());
 
         then(anna).should(eventually(seeThat(theUserAvatarIsVisible)));
     }

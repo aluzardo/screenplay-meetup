@@ -13,6 +13,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
+import net.thucydides.core.annotations.WithTag;
 import org.openqa.selenium.WebDriver;
 
 import net.thucydides.core.annotations.Managed;
@@ -28,6 +29,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static org.hamcrest.Matchers.containsString;
 
 @RunWith(SerenityRunner.class)
+@WithTag("Screenplay")
 public class SendMessageTest {
     Actor anna = Actor.named("Anna");
     String otherUser = "Screenplay Meetup";
