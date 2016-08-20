@@ -9,8 +9,6 @@ import net.serenitybdd.screenplay.Actor;
  */
 public class Authenticate implements Ability {
 
-    private Actor actor;
-
     private final String username;
     private final String password;
 
@@ -35,7 +33,6 @@ public class Authenticate implements Ability {
 
     @Override
     public <T extends Ability> T asActor(Actor actor) {
-        this.actor = actor;
         return (T) this;
     }
 }
