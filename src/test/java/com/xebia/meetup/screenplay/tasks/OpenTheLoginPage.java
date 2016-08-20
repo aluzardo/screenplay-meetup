@@ -1,4 +1,4 @@
-package com.xebia.meetup.screenplay.tasks.login;
+package com.xebia.meetup.screenplay.tasks;
 
 import com.xebia.meetup.screenplay.ui.LoginPage;
 import net.serenitybdd.screenplay.Actor;
@@ -11,7 +11,7 @@ public class OpenTheLoginPage implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Open.browserOn().the(loginPage)
+                //TODO: perform the action to open the Login Page
         );
     }
 }
