@@ -4,27 +4,19 @@ import com.xebia.meetup.screenplay.exceptions.CannotAuthenticateException;
 import net.serenitybdd.screenplay.Ability;
 import net.serenitybdd.screenplay.Actor;
 
-/**
- * Created by jochum on 15/08/16.
- */
 public class Authenticate implements Ability {
 
-    private Actor actor;
+    // TODO: fix these getter methods
+    public String username() { return ""; }
+    public String password() { return ""; }
 
-    private final String username;
-    private final String password;
-
-    private Authenticate(String username, String password){
-        this.username = username;
-        this.password = password;
-    }
-
-    public String username() { return username; }
-    public String password() { return password; }
-
+    // TODO: implement this method to return a Authenticate Ability instance
     public static Authenticate withCredentials(String username, String password) {
-        return new Authenticate(username, password);
+        return null;
     }
+
+
+    // Some additional methods for serenity's inner working, ignore for now
 
     public static Authenticate as(Actor actor) {
         if (actor.abilityTo(Authenticate.class) == null) {
@@ -35,7 +27,6 @@ public class Authenticate implements Ability {
 
     @Override
     public <T extends Ability> T asActor(Actor actor) {
-        this.actor = actor;
         return (T) this;
     }
 }
