@@ -5,6 +5,9 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 
+/*
+ * Skip the MeetUp landing page and open the login page directly
+ */
 public class OpenTheLoginPage implements Task {
     LoginPage loginPage;
 

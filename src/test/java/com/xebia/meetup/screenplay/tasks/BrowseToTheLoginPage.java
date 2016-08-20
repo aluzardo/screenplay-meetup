@@ -11,8 +11,9 @@ public class BrowseToTheLoginPage implements Task {
     @Override
     @Step("clicks the login link")
     public <T extends Actor> void performAs(T actor) {
+        // TODO: use the correct Target to reach the Login Page
         actor.attemptsTo(
-                Click.on(MeetUpLandingPage.LOGIN_LINK)
+                Click.on(/* target */)
         );
     }
 }

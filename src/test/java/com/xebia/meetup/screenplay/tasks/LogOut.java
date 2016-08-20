@@ -12,5 +12,6 @@ public class LogOut implements Task {
     @Step("logs out")
     public <T extends Actor> void performAs(T actor) {
         // TODO: perform the task to Logout, using all needed Actions
+        throw new RuntimeException("Logout task not yet implemented");
     }
 }

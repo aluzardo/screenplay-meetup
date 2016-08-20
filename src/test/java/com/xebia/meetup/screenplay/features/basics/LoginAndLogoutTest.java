@@ -1,6 +1,7 @@
 package com.xebia.meetup.screenplay.features.basics;
 
 import com.xebia.meetup.screenplay.abilities.Authenticate;
+import com.xebia.meetup.screenplay.helper.TheTestPasses;
 import com.xebia.meetup.screenplay.tasks.BrowseToTheLoginPage;
 import com.xebia.meetup.screenplay.tasks.LogIn;
 import com.xebia.meetup.screenplay.tasks.OpenTheLoginPage;
@@ -10,12 +11,11 @@ import com.xebia.meetup.utils.Credentials;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
-import net.thucydides.core.annotations.WithTag;
 import org.openqa.selenium.WebDriver;
 
+import net.thucydides.core.annotations.WithTag;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
@@ -72,12 +72,4 @@ public class LoginAndLogoutTest {
         anna.attemptsTo(logOut);
     }
 
-
-    // Temporary class to make tests pass
-    class TheTestPasses implements Question<Boolean> {
-        @Override
-        public Boolean answeredBy(Actor actor) {
-            return true;
-        }
-    }
 }

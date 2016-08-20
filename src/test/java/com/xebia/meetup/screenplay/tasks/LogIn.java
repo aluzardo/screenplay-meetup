@@ -23,12 +23,12 @@ public class LogIn implements Task {
     @Override
     @Step("logs in as: {0}")
     public <T extends Actor> void performAs(T actor) {
+        // TODO: finish the implementation of this task
         actor.attemptsTo(
                 Enter.theValue(authenticated(actor).username())
-                        .into(LoginPage.USERNAME_FIELD),
-                Enter.theValue(authenticated(actor).password())
-                        .into(LoginPage.PASSWORD_FIELD),
-                Click.on(LoginPage.LOGIN_BUTTON)
+                        .into(/* username field */)//, <- Actions are comma separated
+                // ACTION: enter password
+                // ACTION: click login button
         );
     }
 
