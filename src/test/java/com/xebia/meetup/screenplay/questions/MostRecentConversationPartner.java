@@ -9,6 +9,7 @@ public class MostRecentConversationPartner implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        return Text.of(MessagesPage.MOST_RECENT_CONVERSATION_PARTNER).viewedBy(actor).asString();
+        // TODO: implement this question
+        throw new RuntimeException("Unimplemented question MostRecentConversationPartner");
     }
 }

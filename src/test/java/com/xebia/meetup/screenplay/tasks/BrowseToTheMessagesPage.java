@@ -11,8 +11,7 @@ public class BrowseToTheMessagesPage implements Task {
     @Override
     @Step("browses to the messages page")
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                Click.on(HeaderNavigation.MESSAGES)
-        );
+        // TODO: Impelemt this task
+        throw new RuntimeException("Unimplemented task BrowseToTheMessagesPage");
     }
 }

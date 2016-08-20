@@ -24,12 +24,8 @@ public class DraftANewMessage implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                Click.on(MessagesPage.NEW_MESSAGE_BUTTON),
-                Enter.theValue(username).into(MessagesPage.NewMessage.RECIPIENTS),
-                Click.on(MessagesPage.NewMessage.FOUND_MEMBER),
-                Enter.theValue(message).into(MessagesPage.NewMessage.MESSAGE_TEXT)
-        );
+        // TODO: implement this task
+        throw new RuntimeException("Unimplemented task DraftANewMessage");
     }
 
     protected DraftANewMessage(String username) {
