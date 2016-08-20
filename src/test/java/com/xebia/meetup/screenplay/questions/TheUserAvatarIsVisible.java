@@ -9,6 +9,7 @@ public class TheUserAvatarIsVisible implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return CurrentVisibility.of(HeaderNavigation.AVATAR).viewedBy(actor).asBoolean();
+        // TODO: return the avatar visibility
+        return false;
     }
 }

@@ -1,4 +1,4 @@
-package com.xebia.meetup.screenplay.tasks.login;
+package com.xebia.meetup.screenplay.tasks;
 
 import com.xebia.meetup.screenplay.abilities.Authenticate;
 import com.xebia.meetup.screenplay.ui.LoginPage;
