@@ -11,7 +11,7 @@ public class BrowseToTheMessagesPage implements Task {
     @Override
     @Step("browses to the messages page")
     public <T extends Actor> void performAs(T actor) {
-        // TODO: Impelemt this task
+        // TODO: Implement this task
         throw new RuntimeException("Unimplemented task BrowseToTheMessagesPage");
     }
 }
