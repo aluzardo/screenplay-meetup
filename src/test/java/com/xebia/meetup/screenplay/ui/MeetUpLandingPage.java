@@ -7,5 +7,5 @@ import org.openqa.selenium.By;
 
 @DefaultUrl("http://www.meetup.com")
 public class MeetUpLandingPage extends PageObject {
-    public static Target LOGIN_LINK = Target.the("login link").located(By.cssSelector("#nav-headerLogin a"));
+    public static Target LOGIN_LINK = Target.the("login link").located(By.cssSelector("#authItem a[href*=\"login\"]"));
 }

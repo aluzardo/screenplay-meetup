@@ -8,7 +8,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("http://www.meetup.com")
 public class MeetUpLandingPage extends PageObject {
 
-    @FindBy(css="#nav-headerLogin a")
+    @FindBy(css="#authItem a[href*=\"login\"]")
     WebElementFacade loginLink;
 
     public void goto_login_page() {
