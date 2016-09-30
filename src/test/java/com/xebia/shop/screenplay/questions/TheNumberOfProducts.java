@@ -11,7 +11,6 @@ import net.serenitybdd.screenplay.questions.Text;
 public class TheNumberOfProducts implements Question<Integer> {
     @Override
     public Integer answeredBy(Actor actor) {
-        // TODO: return number of items in the cart as an Integer
-        return -1;
+        return Text.of(ProductPage.NUMBER_OF_ITEMS).viewedBy(actor).asInteger();
     }
 }

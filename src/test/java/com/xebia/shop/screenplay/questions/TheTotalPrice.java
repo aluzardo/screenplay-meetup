@@ -11,7 +11,6 @@ import net.serenitybdd.screenplay.questions.Text;
 public class TheTotalPrice implements Question<String> {
     @Override
     public String answeredBy(Actor actor) {
-        // TODO: return the total price (including euro sign) as a String
-        return "";
+        return Text.of(ProductPage.TOTAL_PRICE).viewedBy(actor).asString();
     }
 }
