@@ -6,10 +6,10 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class HeaderNavigation extends PageObject {
 
-    @FindBy(css="#nav-messages a")
+    @FindBy(css="#globalNav a[href*=\"messages\"]")
     WebElementFacade messagesLink;
 
-    @FindBy(css="#nav-profile a")
+    @FindBy(id="profileNav")
     WebElementFacade accountDropdown;
 
     @FindBy(id="headerAvatar")
