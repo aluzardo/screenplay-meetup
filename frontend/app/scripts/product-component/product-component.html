@@ -1,0 +1,24 @@
+<div id="products" class="row" cg-busy="ctrl.loadingProducts">
+  <div class="alert alert-success" role="alert" ng-show="ctrl.displayProductAddedAlert || ctrl.displayProductRemovedAlert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Success:</span>
+    <span ng-show="ctrl.displayProductAddedAlert" data-e2e-id="product-added-alert">The item has been added to your cart</span>
+    <span ng-show="ctrl.displayProductRemovedAlert" data-e2e-id="product-removed-alert">The item has been removed from your cart</span>
+  </div>
+
+  <div class="col-sm-4 col-md-3" ng-repeat="product in ctrl.products">
+    <div class="product" ng-drag="true" ng-drag-data="obj" data-allow-transform="true" class="ng-binding" draggable="true">
+      <h3>{{product.name}}</h3>
+      <img ng-src="/assets/images/{{product.image}}" alt="{{product.name}}" title="{{product.name}}" />
+      <p>{{product.description}}</p>
+      <h3 class="price">{{product.price | currency:"€ "}}</h3>
+      <ngcart-addtocart
+        id="{{product.id}}"
+        name="{{product.name}}"
+        price="{{product.price}}"
+        quantity="1"
+        quantity-max="30"
+        data="product">Add to cart</ngcart-addtocart>
+    </div>
+  </div>
+</div>

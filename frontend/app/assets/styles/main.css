@@ -1,0 +1,147 @@
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-bottom: 20px;
+}
+
+h1, h2, h3 {
+  color: #444;
+}
+
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  padding-top: 20px;
+  background-color: #6c1d5f;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(90deg,#6c1d5f,#8c267b);
+  background-image: linear-gradient(0deg,#6c1d5f,#8c267b);
+  border-bottom: 1px solid #e5e5e5;
+  color: #ffffff;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 a {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header a {
+  color: #ffffff;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+#products {
+  padding: 0 15px;
+}
+
+.product {
+  min-height: 350px;
+  display: block;
+  padding: 10px;
+  margin-bottom: 21px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.product h3 {
+  color: #444;
+}
+
+.product img {
+  width: 60%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.product .price {
+  color: #6c1d5f;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #06a99c;
+  border-color: #06a99c;
+}
+
+.btn-green:hover {
+  border-radius: 2px;
+  background-repeat: repeat-x;
+  background-image: -moz-linear-gradient(90deg, #06a99c, #07bdae);
+  background-image: linear-gradient(0deg, #06a99c, #07bdae);
+  text-shadow: 1px 1px 1px #069f93;
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.quantity-green {
+  color: #06a99c;
+  border-color: #06a99c;
+}
+
+.btn-spacer {
+  margin-left: 10px;
+}
+
+.quantity-spacer {
+  margin-right: 10px;
+}
+
+.wrapper {
+  position:relative;
+  padding-bottom: 35px;
+}
+
+.bottom {
+  position:absolute;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Remove the padding we set earlier */
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+}

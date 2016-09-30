@@ -1,0 +1,10 @@
+<div class="alert alert-success" role="alert" ng-show="ctrl.checkoutSucceeded">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span data-e2e-id="order-placed-alert">Thank you! Your order was successfully placed!</span>
+</div>
+
+<ngcart-cart ng-if="!ctrl.checkoutSucceeded || ctrl.hasItems"></ngcart-cart>
+
+<div class="col-lg-12" ng-if="ctrl.hasItems">
+  <ngcart-checkout service="http" settings="{ url:'/api/checkout' }">Buy now!</ngcart-checkout>
+</div>
