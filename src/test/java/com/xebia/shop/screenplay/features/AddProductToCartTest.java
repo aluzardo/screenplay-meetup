@@ -4,6 +4,7 @@ import com.xebia.shop.screenplay.questions.TheNumberOfProducts;
 import com.xebia.shop.screenplay.questions.TheTotalPrice;
 import com.xebia.shop.screenplay.tasks.AddsToHerCart;
 import com.xebia.shop.screenplay.tasks.OpenTheWebshop;
+import com.xebia.shop.screenplay.tasks.Start;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
@@ -29,7 +30,6 @@ public class AddProductToCartTest {
 
     Actor anna = Actor.named("Anna");
 
-    @Steps OpenTheWebshop openTheWebshop;
     @Steps TheNumberOfProducts theNumberOfProducts;
     @Steps TheTotalPrice theTotalPrice;
 
@@ -43,7 +43,7 @@ public class AddProductToCartTest {
 
     @Test
     public void add_one_product_to_the_cart() {
-        givenThat(anna).wasAbleTo(openTheWebshop);
+        givenThat(anna).wasAbleTo(Start.withEmptyCart());
 
         when(anna).attemptsTo(AddsToHerCart.theProducts("Specification by Example"));
 

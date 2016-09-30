@@ -18,7 +18,8 @@ public class ChangeTheAmount implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        Integer currentAmount = Text.of(CartItem.AMOUNT.of(product)).viewedBy(actor).asInteger();
+        String parsedAmount = Text.of(CartItem.AMOUNT.of(product)).viewedBy(actor).asString().trim();
+        Integer currentAmount = Integer.parseInt(parsedAmount);
         if (currentAmount < newAmount) {
             actor.attemptsTo(
                     IncreaseAmountOfProduct.with(product, newAmount-currentAmount)

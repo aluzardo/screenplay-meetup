@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class CartItem {
 
     public static Target AMOUNT = Target.the("amount in cart")
-                                .locatedBy("/tr[data-product-name=\"{0}\"]/td/span[data-e2e-id=\"cart-product-decrease-quantity\"]/..");
+                                .locatedBy("//tr[@data-product-name='{0}']/td/span[@data-e2e-id='cart-product-decrease-quantity']/..");
     public static Target DECREASE_BUTTON = Target.the("decrease button")
             .locatedBy("[data-product-name=\"{0}\"] [data-e2e-id=\"cart-product-decrease-quantity\"]");
     public static Target INCREASE_BUTTON = Target.the("increase button")

@@ -2,9 +2,11 @@ package com.xebia.shop.screenplay.tasks;
 
 import com.xebia.shop.screenplay.ui.Product;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -13,11 +15,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
  */
 public class AddsToHerCart implements Task {
 
-    private String[] products;
-
-    public AddsToHerCart(String... products) {
-        this.products = products;
-    }
+    private Collection<String> products;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -28,8 +26,16 @@ public class AddsToHerCart implements Task {
         }
     }
 
-    public static Performable theProducts(String... products) {
+    public static AddsToHerCart theProducts(String... products) {
+        return theProducts(Arrays.asList(products));
+    }
+
+    public static AddsToHerCart theProducts(Collection<String> products) {
         return instrumented(AddsToHerCart.class, products);
+    }
+
+    public AddsToHerCart(Collection<String> products) {
+        this.products = products;
     }
 
 }

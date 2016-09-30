@@ -5,6 +5,10 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.thucydides.core.annotations.Steps;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 /**
@@ -14,15 +18,7 @@ public class Start implements Task {
 
     @Steps OpenTheWebshop openTheWebshop;
 
-    private String[] products;
-
-    public Start() {
-        this.products = new String[0];
-    }
-
-    public Start(String... products) {
-        this.products = products;
-    }
+    private Collection<String> products;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -33,10 +29,18 @@ public class Start implements Task {
     }
 
     public static Performable withEmptyCart() {
-        return instrumented(Start.class);
+        return instrumented(Start.class, Collections.EMPTY_LIST);
     }
 
     public static Performable withCartContaining(String... products) {
+        return withCartContaining(Arrays.asList(products));
+    }
+
+    public static Performable withCartContaining(Collection<String> products) {
         return instrumented(Start.class, products);
+    }
+
+    public Start(Collection<String> products) {
+        this.products = products;
     }
 }

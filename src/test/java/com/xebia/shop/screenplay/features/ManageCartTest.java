@@ -29,8 +29,7 @@ public class ManageCartTest {
 
     Actor anna = Actor.named("Anna");
 
-    @Steps
-    ViewTheCart viewTheCart;
+    @Steps ViewTheCart viewTheCart;
     @Steps TheNumberOfProducts theNumberOfProducts;
     @Steps TheTotalPrice theTotalPrice;
 
@@ -43,7 +42,7 @@ public class ManageCartTest {
     }
 
     @Test
-    public void add_one_product_to_the_cart() {
+    public void increase_amount_of_one_product() {
         givenThat(anna).wasAbleTo(Start.withCartContaining("Testing 3.0",
                                                             "Test Driven Development (TDD)",
                                                             "Specification by Example"));
