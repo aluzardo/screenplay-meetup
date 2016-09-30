@@ -1,5 +1,7 @@
 package com.xebia.shop.screenplay.features;
 
+import com.xebia.shop.screenplay.questions.TheNumberOfProducts;
+import com.xebia.shop.screenplay.questions.TheTotalPrice;
 import com.xebia.shop.screenplay.tasks.AddsToHerCart;
 import com.xebia.shop.screenplay.tasks.OpenTheWebshop;
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -29,6 +31,8 @@ public class AddProductToCartTest {
     Actor anna = Actor.named("Anna");
 
     @Steps OpenTheWebshop openTheWebshop;
+    @Steps TheNumberOfProducts theNumberOfProducts;
+    @Steps TheTotalPrice theTotalPrice;
 
     @Managed(uniqueSession = true)
     public WebDriver herBrowser;
@@ -44,14 +48,8 @@ public class AddProductToCartTest {
 
         when(anna).attemptsTo(AddsToHerCart.theProducts("Specification by Example"));
 
-
-
-        // Temporary assertion that always succeeds
-        then(anna).should(seeThat(new Question<Integer>() {
-            @Override
-            public Integer answeredBy(Actor actor) {
-                return 1;
-            }
-        }, is(1)));
+        then(anna).should(
+                seeThat(theNumberOfProducts, is(1)),
+                seeThat(theTotalPrice, is("€ 795.00")));
     }
 }

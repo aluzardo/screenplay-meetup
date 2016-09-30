@@ -17,7 +17,6 @@ public class AddsToHerCart implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                // TODO: Use the "Click" action to click on the "Add to cart" button of the product
                 Click.on(Product.ADD_TO_CART.of(product))
         );
     }

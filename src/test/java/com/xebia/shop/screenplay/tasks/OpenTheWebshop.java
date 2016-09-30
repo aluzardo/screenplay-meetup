@@ -15,8 +15,7 @@ public class OpenTheWebshop implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                // TODO: use the "Open" action to open the Product Page
-                Open.browserOn()
+                Open.browserOn(theProductPage)
         );
     }
 }
