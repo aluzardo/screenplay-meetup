@@ -4,7 +4,6 @@ import com.xebia.meetup.screenplay.exceptions.CannotAuthenticateException;
 import net.serenitybdd.screenplay.Ability;
 import net.serenitybdd.screenplay.Actor;
 
-
 public class Authenticate implements Ability {
 
     private final String username;

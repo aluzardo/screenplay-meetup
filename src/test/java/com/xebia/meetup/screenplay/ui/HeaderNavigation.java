@@ -7,4 +7,5 @@ public class HeaderNavigation {
     // TODO: Define the targets
     public static Target ACCOUNT_DROPDOWN = null;
     public static Target LOGOUT_LINK = null;
+
 }
